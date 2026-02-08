@@ -31,7 +31,27 @@
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-[Gates determined based on constitution file]
+### Required Gates (from ADHD-Friendly Action-First Second Brain Constitution)
+
+- **Action-First Design**: Feature prioritizes immediate actionable steps over planning
+- **ADHD-Centric UX**: Interface accommodates ADHD patterns (minimal context switching, forgiving)
+- **Deterministic Core**: Feature works without AI dependencies
+- **Cadence-Based Simplicity**: Simple, predictable patterns without complex scheduling
+- **Engagement Metrics**: Success measured by engagement, not completion
+
+### ADHD-Specific Constraints
+
+- Minimal cognitive load per interaction
+- No punishing language for missed routines
+- Immediate value from minimal effort
+- Offline-first capability where applicable
+
+### Test Requirements
+
+- Unit tests for all domain logic (actions, routines, tasks, projects)
+- Integration tests for user journeys
+- Accessibility testing for ADHD compliance
+- Performance testing for engagement responsiveness
 
 ## Project Structure
 

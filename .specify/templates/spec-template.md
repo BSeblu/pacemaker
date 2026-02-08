@@ -105,6 +105,7 @@
 <!--
   ACTION REQUIRED: Define measurable success criteria.
   These must be technology-agnostic and measurable.
+  ADHD-specific metrics MUST be included for this project.
 -->
 
 ### Measurable Outcomes
@@ -113,3 +114,10 @@
 - **SC-002**: [Measurable metric, e.g., "System handles 1000 concurrent users without degradation"]
 - **SC-003**: [User satisfaction metric, e.g., "90% of users successfully complete primary task on first attempt"]
 - **SC-004**: [Business metric, e.g., "Reduce support tickets related to [X] by 50%"]
+
+### ADHD-Specific Success Criteria *(required for this project)*
+
+- **SC-005**: Engagement frequency metric (e.g., "Users initiate actions 3+ times per week")
+- **SC-006**: Cognitive load measure (e.g., "Average task initiation time under 30 seconds")
+- **SC-007**: Forgiveness metric (e.g., "90% of users return after missed days without churn")
+- **SC-008**: Immediate value metric (e.g., "80% of interactions provide value within 15 seconds")

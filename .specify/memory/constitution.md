@@ -1,50 +1,55 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+Sync Impact Report:
+- Version change: (none) → 1.0.0
+- Added sections: All sections (initial constitution)
+- Templates updated: ✅ plan-template.md, ✅ spec-template.md, ✅ tasks-template.md
+- Follow-up TODOs: None
+-->
+
+# ADHD-Friendly Action-First Second Brain Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Action-First Design
+Every feature must prioritize immediate, actionable steps over planning overhead. Actions MUST be atomic, immediately doable, and context-aware. The system MUST generate engagement opportunities without requiring completion for value.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. ADHD-Centric UX (NON-NEGOTIABLE)
+Interface MUST accommodate ADHD cognitive patterns: minimal context switching, immediate feedback, forgiving about missed days, and focus on engagement over completion. NO guilt-inducing language or punitive backfill mechanisms.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. Deterministic Core
+System MUST be fully functional without AI dependencies. Core behaviors (actions, routines, tasks, projects) MUST operate deterministically and be independently testable. AI features MUST be optional enhancements only.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. Cadence-Based Simplicity
+Routines MUST generate actions once per cadence period without exception. Complex scheduling logic MUST be rejected in favor of simple, predictable patterns. Missing days MUST NOT create debt or complex catch-up mechanisms.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### V. Engagement Metrics
+Success MUST be measured by engagement frequency and action initiation, NOT completion rates. Analytics MUST track user interaction patterns that encourage continued use without shame or pressure.
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+## ADHD-Specific Constraints
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+Technology and design MUST accommodate neurodivergent users:
+- Minimal cognitive load per interaction
+- Forgiving about inconsistent usage patterns
+- No punishing language for missed routines
+- Immediate value from minimal effort
+- Offline-first capability where possible
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+## Development Workflow
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+Test-First Development mandatory for core domain logic:
+- Unit tests for all action/routine/task behaviors
+- Integration tests for user journeys
+- Accessibility testing for ADHD compliance
+- Performance testing for engagement responsiveness
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+This constitution supersedes all other project practices. Amendments require:
+- Documented impact analysis on ADHD user experience
+- Updated test coverage for affected behaviors
+- Migration plan preserving user engagement data
+- Review compliance with existing ADHD accessibility standards
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+All code reviews MUST verify constitution compliance. Complexity increases MUST be explicitly justified against simplicity principles. Use README.md and architecture.md for runtime development guidance.
+
+**Version**: 1.0.0 | **Ratified**: 2026-02-08 | **Last Amended**: 2026-02-08

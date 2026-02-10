@@ -1,5 +1,5 @@
 
-# ADHD-Friendly Action-First Second Brain
+# Pacemaker: An ADHD-Friendly Action-First Second Brain
 
 ## Overview
 This system helps ADHD users engage with routines, tasks, and actions without guilt, focusing on *doing* rather than planning.

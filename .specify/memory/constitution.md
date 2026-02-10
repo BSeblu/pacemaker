@@ -6,7 +6,7 @@ Sync Impact Report:
 - Follow-up TODOs: None
 -->
 
-# ADHD-Friendly Action-First Second Brain Constitution
+# Pacemaker: ADHD-Friendly Action-First Second Brain Constitution
 
 ## Core Principles
 

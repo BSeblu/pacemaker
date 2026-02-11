@@ -1,25 +1,25 @@
-# Implementation Plan: [FEATURE]
+# Implementation Plan: Full Stack Scaffolding
 
-**Branch**: `[###-feature-name]` | **Date**: [DATE] | **Spec**: [link]
-**Input**: Feature specification from `/specs/[###-feature-name]/spec.md`
+**Branch**: `001-full-stack` | **Date**: 2026-02-11 | **Spec**: [/home/benjamin/dev/pacemaker/specs/001-full-stack/spec.md](/home/benjamin/dev/pacemaker/specs/001-full-stack/spec.md)
+**Input**: Feature specification from `/specs/001-full-stack/spec.md`
 
 **Note**: This template is filled in by the `/speckit.plan` command. See `.specify/templates/commands/plan.md` for the execution workflow.
 
 ## Summary
 
-Scaffold a cost-optimized full-stack application with serverless Python/FastAPI backend, serverless PostgreSQL database (Neon), and React frontend with Clerk authentication. Architecture designed for $0 cost when idle with scale-to-zero capabilities.
+Scaffold a complete serverless full-stack application with Python FastAPI backend, Next.js frontend with SSR, Clerk authentication, and Neon serverless PostgreSQL database. The architecture prioritizes cost optimization (scale-to-zero), ADHD-friendly development experience (minimal setup steps), and framework-agnostic deployment capabilities.
 
 ## Technical Context
 
 **Language/Version**: Python 3.11+, TypeScript/Node.js 20+  
-**Primary Dependencies**: FastAPI, Neon serverless driver, React, Vite, Clerk, pytest  
+**Primary Dependencies**: FastAPI, Next.js, Clerk, Neon serverless driver  
 **Storage**: Neon serverless PostgreSQL (HTTP-based connections)  
-**Testing**: pytest (backend), Vitest + React Testing Library (frontend), Playwright (e2e)  
-**Target Platform**: Vercel/Railway (serverless deployment), Linux containers (development)  
-**Project Type**: web (backend + frontend)  
-**Performance Goals**: Warm API response <100ms, cold start <1000ms, database operations <200ms  
-**Constraints**: Setup <10 minutes, $0 cost when idle (scale-to-zero), serverless architecture  
-**Scale/Scope**: Development environment with production-ready serverless architecture
+**Testing**: pytest (backend), Node Test Runner/Vitest (frontend)  
+**Target Platform**: Serverless platforms (Vercel, Railway, AWS)  
+**Project Type**: Web application (backend + frontend)  
+**Performance Goals**: <100ms API response (warm), <1000ms cold start, <1MB frontend bundle  
+**Constraints**: Cost-optimized (scale-to-zero), ADHD-friendly UX (3-step setup), framework-agnostic deployment  
+**Scale/Scope**: Development scaffolding, 10k user target, minimal MVP
 
 ## Constitution Check
 
@@ -27,34 +27,25 @@ Scaffold a cost-optimized full-stack application with serverless Python/FastAPI 
 
 ### Required Gates (from ADHD-Friendly Action-First Second Brain Constitution)
 
-- **Action-First Design**: ✅ PASS - 3-step setup, immediate development environment
-- **ADHD-Centric UX**: ✅ PASS - Minimal cognitive load, clear error messages
-- **Deterministic Core**: ✅ PASS - Works without AI, deterministic serverless functions
-- **Cadence-Based Simplicity**: ✅ PASS - Simple serverless patterns, no complex scheduling
-- **Engagement Metrics**: ✅ PASS - Measured by setup success and API response times
-
-### Post-Design Validation
-
-- **Minimal Cognitive Load**: ✅ VERIFIED - 3-step setup, simple directory structure
-- **Immediate Value**: ✅ VERIFIED - Hello world endpoint provides instant feedback
-- **Testing-First**: ✅ VERIFIED - pytest + Vitest provide fast feedback loops
-- **Performance**: ✅ VERIFIED - Warm response <100ms meets requirements
-- **Cost Optimization**: ✅ VERIFIED - Serverless architecture achieves $0 idle cost
-- **ADHD-Friendly**: ✅ VERIFIED - Hot reload, clear errors, minimal configuration
+- **Action-First Design**: ✅ Feature provides immediate actionable steps (3-step setup, <5min to API call)
+- **ADHD-Centric UX**: ✅ Interface minimizes cognitive load (simple setup, forgiving, immediate feedback)
+- **Deterministic Core**: ✅ Full functionality works without AI dependencies (FastAPI + Next.js + Clerk)
+- **Cadence-Based Simplicity**: ✅ Simple, predictable patterns (standard web stack, no complex scheduling)
+- **Engagement Metrics**: ✅ Success measured by engagement frequency (development setup time, API response speed)
 
 ### ADHD-Specific Constraints
 
-- Minimal cognitive load per interaction
-- No punishing language for missed routines
-- Immediate value from minimal effort
-- Offline-first capability where applicable
+- ✅ Minimal cognitive load per interaction (3-step setup, simple UI)
+- ✅ No punishing language for missed routines (not applicable to scaffolding)
+- ✅ Immediate value from minimal effort (hello world endpoint works immediately)
+- ✅ Offline-first capability where applicable (local development environment)
 
 ### Test Requirements
 
-- Unit tests for all domain logic (actions, routines, tasks, projects)
-- Integration tests for user journeys
-- Accessibility testing for ADHD compliance
-- Performance testing for engagement responsiveness
+- ✅ Unit tests for all domain logic (pytest for backend, Vitest for frontend)
+- ✅ Integration tests for user journeys (end-to-end authentication flow)
+- ✅ Accessibility testing for ADHD compliance (simple, clear UI design)
+- ✅ Performance testing for engagement responsiveness (<100ms API response times)
 
 ## Project Structure
 
@@ -71,48 +62,36 @@ specs/[###-feature]/
 ```
 
 ### Source Code (repository root)
-<!--
-  ACTION REQUIRED: Replace the placeholder tree below with the concrete layout
-  for this feature. Delete unused options and expand the chosen structure with
-  real paths (e.g., apps/admin, packages/something). The delivered plan must
-  not include Option labels.
--->
 
 ```text
 backend/
-├── api/
-│   └── hello.py              # Serverless function entry point
 ├── src/
-│   ├── database.py           # Neon serverless driver configuration
-│   ├── auth.py               # Clerk JWT validation
-│   └── main.py               # FastAPI app factory
+│   ├── models/
+│   ├── services/
+│   ├── api/
+│   └── auth/
 ├── tests/
-│   ├── test_api.py
-│   └── test_auth.py
-├── requirements.txt
-├── vercel.json               # Serverless deployment config
-└── Dockerfile.dev            # Local development only
+└── requirements.txt
 
 frontend/
 ├── src/
 │   ├── components/
-│   │   ├── auth/
-│   │   └── common/
 │   ├── pages/
-│   │   ├── auth/
-│   │   └── hello/
 │   ├── services/
-│   └── App.tsx
+│   └── middleware/
 ├── tests/
 ├── package.json
-└── Dockerfile.dev
+└── next.config.js
 
-docker-compose.yml            # Local development
-vercel.json                   # Deployment configuration
+tests/
+├── integration/
+└── e2e/
+
+docker-compose.yml
 README.md
 ```
 
-**Structure Decision**: Web application with serverless backend (Python/FastAPI), serverless PostgreSQL (Neon), and React frontend. Backend deployed as serverless functions with HTTP-based database connections.
+**Structure Decision**: Web application with separated backend (FastAPI) and frontend (Next.js) projects for independent deployment and scaling.
 
 ## Complexity Tracking
 

@@ -17,6 +17,14 @@
 - Q: What database solution for serverless architecture? → A: Serverless PostgreSQL via Neon with serverless driver (HTTP-based connections)
 - Q: How to handle database connections in serverless environment? → A: Use Neon's serverless driver with HTTP-based connections instead of traditional pooling
 
+### Session 2026-02-11
+
+- Q: Should the frontend use Next.js instead of React + Vite? → A: Yes, use Next.js
+- Q: Is server-side rendering (SSR) required for this application, or should it remain client-side rendered (CSR)? → A: SSR enabled
+- Q: Should the application be optimized for Next.js deployment on Vercel, or should it maintain framework-agnostic deployment capabilities? → A: Framework agnostic
+- Q: Are there specific development experience requirements (e.g., hot reload speed, TypeScript support, plugin ecosystem) that would favor Next.js over React/Vite? → A: Next.js better
+- Q: What are the performance and cost implications of using Next.js vs React/Vite in a serverless deployment context, particularly regarding cold start times and bundle size? → A: Next.js better
+
 ## User Scenarios & Testing *(mandatory)*
 
 ### User Story 1 - Development Environment Setup (Priority: P1)
@@ -96,6 +104,17 @@ As a developer, I want Docker containers and development scripts so that I can e
 - How does the system handle HTTP connection timeouts to Neon database?
 - What is the behavior during serverless function concurrency limits?
 - How are database connection errors handled in HTTP-based serverless driver?
+- How does Next.js handle build failures and provide clear error messages?
+- What happens when Next.js development server fails to start?
+- How does Next.js handle TypeScript compilation errors during development?
+- What occurs when Next.js build process times out or fails?
+- How does SSR handle network failures during page generation?
+- What happens when Next.js API routes fail during SSR?
+- How does Next.js handle caching and cache invalidation for SSR pages?
+- How does the system handle deployment failures across different platforms?
+- What happens when deployment configuration is missing or incorrect?
+- How does the system handle platform-specific deployment issues?
+- What occurs when environment variables are missing in different deployment environments?
 
 ## Requirements *(mandatory)*
 
@@ -111,6 +130,9 @@ As a developer, I want Docker containers and development scripts so that I can e
 - **FR-008**: Backend MUST validate Clerk authentication tokens before allowing access to protected endpoints
 - **FR-009**: System MUST use Neon serverless PostgreSQL for persistence via HTTP-based serverless driver
 - **FR-010**: Backend MUST connect to database using Neon's serverless driver (no traditional connection pooling)
+- **FR-011**: Frontend MUST be built with Next.js framework for optimal serverless deployment
+- **FR-012**: Frontend MUST use server-side rendering (SSR) for all pages to optimize performance and SEO
+- **FR-013**: System MUST support deployment on multiple platforms (Vercel, Railway, AWS, etc.) without framework-specific dependencies
 
 ## Success Criteria *(mandatory)*
 
@@ -120,12 +142,28 @@ As a developer, I want Docker containers and development scripts so that I can e
 - **SC-002**: Both project components start successfully and establish communication within 30 seconds
 - **SC-003**: Hello world API endpoint responds with correct message within 100ms for authenticated requests (warm start), with cold start under 1000ms
 - **SC-004**: Complete user authentication flow (signup → login → API call) completes in under 5 seconds
-- **SC-009**: Database operations via Neon serverless driver complete within 200ms
-- **SC-010**: System costs $0 when idle (scale-to-zero for both compute and database)
+- **SC-005**: Frontend development server with hot reload starts in under 10 seconds
+- **SC-006**: Frontend build process completes in under 30 seconds
+- **SC-007**: Frontend bundle size optimized for serverless deployment (under 1MB)
+- **SC-008**: SSR pages render in under 500ms for first-time visitors
+- **SC-009**: CSR interactions respond in under 100ms after initial page load
+- **SC-010**: Database operations via Neon serverless driver complete within 200ms
+- **SC-011**: System costs $0 when idle (scale-to-zero for both compute and database)
+- **SC-012**: Application can be deployed to any serverless platform without framework-specific modifications
+- **SC-013**: Deployment configuration is platform-agnostic and uses standard configurations
+- **SC-014**: Next.js provides superior performance with optimized cold start times and efficient bundle management
 
 ### ADHD-Specific Success Criteria *(required for this project)*
 
-- **SC-005**: Development environment setup can be completed in 3 or fewer steps to reduce cognitive load
-- **SC-006**: Time from project setup to first successful API call is under 5 minutes
-- **SC-007**: 90% of setup failures provide clear, actionable error messages with resolution steps
-- **SC-008**: Development server restarts after configuration changes take under 10 seconds
+- **SC-015**: Development environment setup can be completed in 3 or fewer steps to reduce cognitive load
+- **SC-016**: Time from project setup to first successful API call is under 5 minutes
+- **SC-017**: 90% of setup failures provide clear, actionable error messages with resolution steps
+- **SC-018**: Development server restarts after configuration changes take under 10 seconds
+- **SC-019**: Next.js development server hot reload provides instant feedback (<2 seconds)
+- **SC-020**: Next.js build process is predictable and provides clear progress indicators
+- **SC-021**: SSR page generation is transparent and provides clear debugging information
+- **SC-022**: Next.js error pages provide helpful guidance for common issues
+- **SC-023**: Deployment process is simple and works across multiple platforms
+- **SC-024**: Configuration files are minimal and easy to understand
+- **SC-025**: Next.js provides superior development experience with built-in TypeScript support and plugin ecosystem
+- **SC-026**: Next.js provides superior performance with optimized cold start times and efficient bundle management

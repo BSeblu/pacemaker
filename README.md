@@ -15,7 +15,7 @@ This system helps ADHD users engage with routines, tasks, and actions without gu
 ## Tech Stack
 - Frontend: Next.js
 - Backend: Nest.js
-- Database: PostgreSQL
+- Database: Serverless SQLite (Turso cloud / drizzle)
 - Authentication: Clerk
 - Serverless preferred for MVP
 
